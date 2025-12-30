@@ -1,16 +1,16 @@
 library = {}
-library.screen = nil -- will hold your UI object
+library.IcewareWindow = nil -- reference to your Iceware window
 
-function library:initialize(uiObject)
-    self.screen = uiObject
+function library:initializeIcewareWindow(icewareUI)
+    self.IcewareWindow = icewareUI
 end
 
-function library:toggleUI()
-    if self.screen then
-        self.screen.Enabled = not self.screen.Enabled
-        print("UI toggled:", self.screen.Enabled)
+function library:toggleIceware()
+    if self.IcewareWindow then
+        self.IcewareWindow.Enabled = not self.IcewareWindow.Enabled
+        print("Iceware UI toggled:", self.IcewareWindow.Enabled)
     else
-        warn("UI object not initialized")
+        warn("Iceware window not initialized")
     end
 end
 
