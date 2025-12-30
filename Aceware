@@ -23,8 +23,8 @@ local next, newInstance, newUDim2, newVector2 = next, Instance.new, UDim2.new, V
 local isexecutorclosure = isexecutorclosure or is_synapse_function or is_sirhurt_closure or iskrnlclosure;
 local executor = (
     syn and 'syn' or
-    getexecutorname and getexecutorname() or
-    'unknown'
+    (typeof(getexecutorname) == 'function' and getexecutorname() or
+    'unknown')
 )
 
 local library = {
@@ -598,10 +598,12 @@ function library:init()
 
     local tooltipObjects = {};
 
+   if isfunction(makefolder) then
     makefolder(self.cheatname)
     makefolder(self.cheatname..'/assets')
     makefolder(self.cheatname..'/'..self.gamename)
-    makefolder(self.cheatname..'/'..self.gamename..'/configs');
+    makefolder(self.cheatname..'/'..self.gamename..'/configs')
+end
 
     function self:SetTheme(theme)
         for i,v in next, theme do
