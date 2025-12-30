@@ -1,3 +1,15 @@
+library = {}
+
+function library:initialize(uiObject)
+    self.screen = uiObject
+end
+
+function library:toggleUI()
+    if self.screen then
+        self.screen.Enabled = not self.screen.Enabled
+    end
+end
+
 -- // variables
 local library = {}
 local pages = {}
@@ -414,11 +426,6 @@ function library:new(props)
 	-- // metatable indexing + return
 	setmetatable(window, library)
 	return window
-end
-function library:toggleUI()
-    if self.screen then
-        self.screen.Enabled = not self.screen.Enabled
-    end
 end
 --
 function library:watermark()
