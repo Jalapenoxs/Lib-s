@@ -415,6 +415,11 @@ function library:new(props)
 	setmetatable(window, library)
 	return window
 end
+function library:toggleUI()
+    if self.screen then
+        self.screen.Enabled = not self.screen.Enabled
+    end
+end
 --
 function library:watermark()
 	local watermark = {}
