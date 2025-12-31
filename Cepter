@@ -773,7 +773,7 @@ function library:Introduction()
     cepter.BackgroundTransparency = 1.000
     cepter.Size = UDim2.new(0, 80, 0, 21)
     cepter.Font = Enum.Font.Code
-    cepter.Text = "powered by cepter"
+    cepter.Text = "Powered By Cepter"
     cepter.TextColor3 = Color3.fromRGB(124, 124, 124)
     cepter.TextSize = 10.000
     cepter.TextTransparency = 1
